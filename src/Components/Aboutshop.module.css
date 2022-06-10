@@ -1,0 +1,21 @@
+.main{
+    padding-top: 40px;
+    height: 100vh;
+    color: white;
+    font-size: 18px;
+}
+
+.part{
+    margin-top: 45px;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 24px;
+    display: block;
+}
+
+.description{
+    margin-top: 10px;
+    display: block;
+}

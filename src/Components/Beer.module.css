@@ -1,0 +1,53 @@
+.card{
+    color: white;
+    text-decoration: none;
+    padding: 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 250px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(6px);
+}
+
+.shouldLoggin{
+    text-align: center;
+    padding: 0 5px;
+    margin-top: 7px;
+}
+
+.card img{
+    width: 80px;
+}
+
+.priceBeer{
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.busket{
+    margin-top: 10px;
+    width: 100px;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 30px;
+}
+
+.nameBeer{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.nameBeer:hover{
+    text-decoration: underline;
+}

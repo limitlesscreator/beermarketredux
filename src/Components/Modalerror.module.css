@@ -1,0 +1,30 @@
+.modal{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background: #ec2626;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    color: white;
+}
+
+.closeIcon{
+    border-radius: 3px;
+    position: absolute;
+    width: 30px;
+    top: 0;
+    right: 0;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.closeIcon:hover{
+    border-radius: 3px;
+    transition: 0.6s;
+    background: red;
+    color: white;
+}

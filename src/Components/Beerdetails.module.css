@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.currentBeerSecond{
+    z-index: 2;
+    position: absolute;
+    top: 45px;
+    left: -15px;
+    width: 150px;
+    mix-blend-mode: color-burn;
+    overflow: hidden;
+}
+
+.currentBeer{
+    z-index: 3;
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    width: 150px;
+}
+
+.littleBeer{
+    top: 130px;
+    left: -30px;
+    position: absolute;
+    width: 150px;
+}
+
+.main{
+    margin-top: 70px;
+    display: flex;
+    color: white;
+    height: 800px;
+}
+
+.firstPart{
+    position: relative;
+    width: 300px;
+}
+
+.secondPartBigBeer{
+    padding-left: 140px;
+    position: relative;
+    padding-top: 200px;
+}
+
+.secondPartLittleBeer{
+    position: relative;
+    padding-top: 130px;
+}
+
+.beerName{
+    width: 700px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    color: #fff;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #5271ff,
+            0 0 82px #5271ff,
+            0 0 92px #5271ff,
+            0 0 102px #5271ff,
+            0 0 151px #5271ff;
+    font-family: "Yellowtail", sans-serif;
+    text-align: center;
+    font-weight: 400;
+    font-size: 5.2rem;
+}
+
+.priceBeerPic{
+    position: absolute;
+    bottom: 80px;
+    right: -100px;
+    width: 360px;
+    opacity: 0.9
+}
+
+.priceBeer{
+    mix-blend-mode: difference;
+    font-size: 110px;
+    position: absolute;
+    bottom: 190px;
+    right: -62px;
+    font-weight: bold;
+}
+
+.description{
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    z-index: 10;
+    text-shadow: 1px 1px #39ff14;
+}
+
+.valueStuff{
+    margin-top: 40px;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px #d414ff;
+}
+
+.countValueStuff{
+    font-weight: bold;
+    text-shadow: 1px 1px #ff1414;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.input{
+    margin-left: 20px;
+    text-align: center;
+    color:  #39ff14;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgb(0 0 0 / 10%);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    font-family: 'Press Start 2P', cursive;
+    background: none;
+    height: 100px;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe;
+    border: none;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 0.5;
+    -moz-appearance: textfield;
+    margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    width: 14px;
+    height: 140px;
+    margin-right: -2px;
+}
+
+.busketCounter{
+    position: relative;
+    width: 500px;
+    justify-content: space-between;
+    margin-top: 55px;
+    display: flex;
+}
+
+.busket{
+    height: 100px;
+    width: 240px;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0px 1px #000;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: visible;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    outline: 0;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYwNjc2OCIgc3RvcC1vcGFjaXR5PSIwLjMiLz4KICAgIDxzdG9wIG9mZnNldD0iMyUiIHN0b3AtY29sb3I9IiNiYmJiYmIiIHN0b3Atb3BhY2l0eT0iMC4zIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI3JSIgc3RvcC1jb2xvcj0iI2JiYmJiYiIgc3RvcC1vcGFjaXR5PSIwLjMiLz4KICAgIDxzdG9wIG9mZnNldD0iMjglIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMyIvPgogICAgPHN0b3Agb2Zmc2V0PSI3MyUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4zIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg4JSIgc3RvcC1jb2xvcj0iIzRiNTA1MSIgc3RvcC1vcGFjaXR5PSIwLjMiLz4KICAgIDxzdG9wIG9mZnNldD0iOTclIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMyIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMyIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(96, 103, 104, 0.3) 0%, rgba(187, 187, 187, 0.3) 3%, rgba(187, 187, 187, 0.3) 27%, rgba(0, 0, 0, 0.3) 28%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.3) 73%, rgba(75, 80, 81, 0.3) 88%, rgba(0, 0, 0, 0.3) 97%, rgba(0, 0, 0, 0.3) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(96, 103, 104, 0.3)), color-stop(3%, rgba(187, 187, 187, 0.3)), color-stop(27%, rgba(187, 187, 187, 0.3)), color-stop(28%, rgba(0, 0, 0, 0.3)), color-stop(60%, rgba(0, 0, 0, 0.3)), color-stop(73%, rgba(0, 0, 0, 0.3)), color-stop(88%, rgba(75, 80, 81, 0.3)), color-stop(97%, rgba(0, 0, 0, 0.3)), color-stop(100%, rgba(0, 0, 0, 0.3)));
+    background: -webkit-linear-gradient(top, rgba(96, 103, 104, 0.3) 0%, rgba(187, 187, 187, 0.3) 3%, rgba(187, 187, 187, 0.3) 27%, rgba(0, 0, 0, 0.3) 28%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.3) 73%, rgba(75, 80, 81, 0.3) 88%, rgba(0, 0, 0, 0.3) 97%, rgba(0, 0, 0, 0.3) 100%);
+    background: -o-linear-gradient(top, rgba(96, 103, 104, 0.3) 0%, rgba(187, 187, 187, 0.3) 3%, rgba(187, 187, 187, 0.3) 27%, rgba(0, 0, 0, 0.3) 28%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.3) 73%, rgba(75, 80, 81, 0.3) 88%, rgba(0, 0, 0, 0.3) 97%, rgba(0, 0, 0, 0.3) 100%);
+    background: -ms-linear-gradient(top, rgba(96, 103, 104, 0.3) 0%, rgba(187, 187, 187, 0.3) 3%, rgba(187, 187, 187, 0.3) 27%, rgba(0, 0, 0, 0.3) 28%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.3) 73%, rgba(75, 80, 81, 0.3) 88%, rgba(0, 0, 0, 0.3) 97%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(to bottom, rgba(96, 103, 104, 0.3) 0%, rgba(187, 187, 187, 0.3) 3%, rgba(187, 187, 187, 0.3) 27%, rgba(0, 0, 0, 0.3) 28%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.3) 73%, rgba(75, 80, 81, 0.3) 88%, rgba(0, 0, 0, 0.3) 97%, rgba(0, 0, 0, 0.3) 100%);
+    border-color: rgba(0, 0, 0, 0.6);
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 0 rgb(255 255 255 / 40%) inset, 0 2px 6px rgb(0 0 0 / 50%), 0 10px rgb(0 0 0 / 5%) inset;
+    box-shadow:
+            0 1px 0 0 rgba(255, 255, 255, 0.4) inset,
+            0 2px 6px rgba(0, 0, 0, 0.5),
+            0 10px rgba(0, 0, 0, 0.05) inset,
+            0 0px 5px 2px #39ff14,
+            0 0px 10px 2px rgba(110, 255, 185, 0.75) inset;
+    border-color: #39ff14;
+
+}
+
+.busket:active {
+    /*margin-top: 4px;*/
+    /*margin-bottom: -20px;*/
+    /*margin-left: 2px;*/
+    /*margin-right: -2px;*/
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+
+}
+
+.busket:hover{
+    color: rgba(220, 255, 240, 0.99);
+    text-shadow: 0px 0px 2px rgba(220, 255, 240, 0.99), 0px 0px 4px rgba(180, 255, 220, 0.99);
+}
+
+.busket:active{
+    color: rgba(220, 255, 240, 0.99);
+    text-shadow: 0px 0px 2px rgba(220, 255, 240, 0.99), 0px 0px 4px rgba(180, 255, 220, 0.99);
+
+    border-color: rgba(110, 255, 185, 0.6) !important;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+
+    box-shadow:
+            0 1px 0 0 rgba(110, 255, 185, 0.4) inset,
+            0 10px 0 0 rgba(110, 255, 185, 0.5) inset,
+            0 0 5px 2px rgba(105, 255, 51, 0.75),
+            0 0 10px 2px rgba(40, 255, 0, 0.75) inset !important;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM2ZWZmYjkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNmVmZmI5IiBzdG9wLW9wYWNpdHk9IjAiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+}
+
+.dontCheating{
+    width: 300px;
+    text-shadow: 0px 0px 5px white;
+    position: absolute;
+    top: -50px;
+    right: -55px;
+}
+
+.emptyStuff{
+    color: red;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px yellow;
+    font-weight: bold;
+    margin-top: 30px;
+}

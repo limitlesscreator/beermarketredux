@@ -1,0 +1,25 @@
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+    position: relative;
+}
+
+.open{
+    position: absolute;
+    width: 600px;
+    transform: rotate(40deg);
+    z-index: -1;
+    right: -190px;
+    top: 120px;
+}
+
+.coldBeer{
+    position: absolute;
+    width: 600px;
+    transform: rotate(334deg);
+    z-index: -1;
+    left: -179px;
+    top: 520px;
+}

@@ -1,0 +1,10 @@
+.main{
+    width: 1060px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: rgba(106, 0, 255, 0.8);
+}

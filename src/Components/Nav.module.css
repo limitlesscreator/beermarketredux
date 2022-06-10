@@ -1,0 +1,118 @@
+.nav{
+    width: 1060px;
+    display: flex;
+    border-radius: 20px;
+    position: fixed;
+    top: 0;
+    justify-content: space-around;
+    background: #371943;
+    z-index: 20;
+}
+
+.helperMenu{
+    background: #371943;
+    position: fixed;
+    width: 102vw;
+    height: 60px;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    box-shadow: -10px 10px 15px;
+}
+
+.pairFixedSize{
+    display: flex;
+    margin-right: 20px;
+}
+
+.pairFixedSize .fixedSize{
+    width: 259.99px;
+}
+
+.positionLogo{
+    position: relative;
+    background: white;
+}
+
+.logo{
+    top: 0;
+    left: -36px;
+    background: none;
+    width: 50px;
+    position: absolute;
+}
+
+
+.nav a{
+    background: #371943;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #39ff14;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+
+
+.nav a:hover{
+    color: #111;
+    background: #39ff14;
+    box-shadow: 0 0 50px #39ff14;
+    transition: 0.4s;
+}
+
+.basketIcon{
+    width: 23px;
+    color: white;
+}
+
+
+
+
+
+.countBasket{
+    padding-left: 2px;
+    position: absolute;
+    top: -7px;
+    left: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: #000;
+    text-align: center;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 16px;
+    background-color: #fff;
+    border: 2px solid #371943;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+
+.hoverElement:hover .countBasket{
+    border: 2px solid #39ff14;
+    transition: 0.4s;
+}
+
+
+
+.sumBasket{
+    color: white;
+    padding-left: 20px;
+    width: 100px;
+}
+
+.spanHelper{
+    padding-left: 20px;
+    position: relative;
+}
+

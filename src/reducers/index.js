@@ -3,5 +3,5 @@ import {countReducer} from "./reducer";
 
 
 export const rootReducer = combineReducers({
-    count: countReducer
+    beers: countReducer
 })

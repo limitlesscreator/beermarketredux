@@ -15,7 +15,7 @@
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 5px 45px rgb(0 0 0 / 10%);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(7px);
 }
 
 .shouldLoggin{

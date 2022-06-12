@@ -1,23 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
 import {useDispatch, useSelector} from "react-redux";
-import {fetchBeers} from "./actions/beersActions";
-import React, {useEffect} from "react";
-import {Main} from "./Components/Main";
+import React from "react";
+import {Nav} from "./Components/Nav/Nav";
+import {Route, Routes} from "react-router-dom";
+import {ListBeers} from "./Components/ListBeers/ListBeers";
+import {Beerdetails} from "./Pages/BeerDetails/Beerdetails";
+import {Aboutshop} from "./Pages/AboutShop/Aboutshop";
+import {Notfoundpage} from "./Pages/NotFountPages/Notfoundpage";
+import {Basket} from "./Components/Basket/Basket";
+import {Popup} from "./Components/Popup/Popup";
 
 function App() {
-  const dispatch = useDispatch()
-  return (
-    <>
-      {/*<button onClick={() => dispatch(loadBeers)}>Fetch beers</button>*/}
+    const dispatch = useDispatch()
+    const popup = useSelector(state => state.beers.popup)
 
-      {/*<button onClick={() => dispatch({type: 'ADD_VALUE'})}>*/}
-      {/*Add number*/}
-      {/*</button>*/}
-        <Main/>
+    return (
+        <>
+            <div className={'main'}>
+                {/*{popup ? <Popup /> : ''}*/}
+                <Nav/>
+                <Routes>
+                    <Route path={'/beershop'} element={<ListBeers/>}/>
 
-    </>
-  );
+                    <Route path={'/beershop/beerDetails/:beer'} element={<Beerdetails/>}/>
+
+                    <Route path={'/about'} element={<Aboutshop/>}/>
+
+                    <Route path={'*'} element={<Notfoundpage/>}/>
+
+                    <Route path={'/basket'} element={<Basket/>}/>
+
+                </Routes>
+            </div>
+        </>
+    );
 }
 
 export default App;

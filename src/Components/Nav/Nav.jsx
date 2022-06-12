@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
 import s from './Nav.module.css'
 import {Link, Route, Routes} from 'react-router-dom'
-import {ReactComponent as BasketIcon} from '../icons/basket.svg'
-import logo from '../Img/logoBeer.png'
+import {ReactComponent as BasketIcon} from '../../icons/basket.svg'
+import logo from '../../Img/logoBeer.png'
 // import {Context} from "../context";
 import {useDispatch, useSelector} from "react-redux";
-import {ListBeers} from "./ListBeers";
-import {Basket} from "./Basket";
+import {ListBeers} from "../ListBeers/ListBeers";
+import {Basket} from "../Basket/Basket";
 
 export const Nav = () => {
     // const {setUserLogged,userLogged,setPopup,costBasket,sizeBasket} = useContext(Context)
@@ -31,13 +31,13 @@ export const Nav = () => {
 
 
             {userLogged ? <Link className={specialClass} to={'/basket'}>
-                <a className={s.basket} href={''}>
+                <span className={s.basket}>
                 <span className={s.spanHelper}>
                         <BasketIcon className={s.basketIcon}/>
                 <div className={s.countBasket}>{sizeBasket}</div>
                 </span>
                     <div className={s.sumBasket}>{costBasket} ₽.</div>
-                </a></Link> : ''}
+                </span></Link> : ''}
 
         </div>
     );

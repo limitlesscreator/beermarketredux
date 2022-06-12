@@ -110,6 +110,9 @@
     padding-left: 20px;
     width: 100px;
 }
+.basket{
+    display: flex;
+}
 
 .spanHelper{
     padding-left: 20px;

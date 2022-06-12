@@ -14,9 +14,8 @@ const initState = {
     beers: [],
     basket:[],
     errorCount: false,
-    addToBasket: 0,
+    addToBasket: 1,
     heightPicture: 0,
-    // valueOfStuffOneBeer: 0,
     currentBeer: {},
     popup: false,
     sizeBasket: 0,
@@ -46,21 +45,48 @@ export const countReducer = (state = initState, action) => {
             return {...state, errorCount: action.payload}
         }
         case 'SET_ADD_TO_BASKET':{
-            return {...state, addToBasket: action.payload}
+            return {...state, addToBasket: Number(action.payload)}
         }
         case 'SET_HEIGHT_PICTURE':{
             return {...state, heightPicture: action.payload}
         }
         case 'ADD_TO_BASKET':{
-            // организовать хранение объектов товаров по id, и если Id совпадают, то меняем общуую сумму и общее кол-во товара !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1!!!!!!!!!!!!!!!!!!!!!!!111
-            let tempId = Object.keys(action.payload.id)
-            console.log(tempId)
-            return {...state, basket: [...state.basket, {[action.payload.id]: action.payload}]}
+            let currentObj = action.payload
+            let prevState = state.basket
+
+            if (prevState.length > 0 && prevState.some(el => el[0] === currentObj.id )){
+                prevState.map(el => {
+                    if (currentObj.id === el[0]){
+                        el[1].valueOfStuff += +currentObj.valueOfStuff
+                        el[1].totalPrice += (+currentObj.price * +currentObj.valueOfStuff)
+                    }
+                })
+                return {...state, basket: [...prevState]}
+            }
+
+            return {...state, basket: [...state.basket, [action.payload.id, action.payload]]}
         }
-        // case 'ADD_VALUE':
-        //     return {...state, value: state.value + 1}
-        // case 'ADD_PRICE_BEER':
-        //     return {...state, priceOfBeer: [...state.priceOfBeer, action.payload.id = action.payload.price ]}
+        case 'SET_SIZE_BASKET':{
+            return {...state, sizeBasket: state.sizeBasket + action.payload}
+        }
+        case 'SET_COST_BASKET':{
+            return {...state, costBasket: state.costBasket + +action.payload}
+        }
+        case 'CHANGE_VALUE_STUFF':{
+            let newBeers = state.beers
+            newBeers[action.payload.id].valueOfStuff -= action.payload.value
+            return {...state, beers: [...newBeers]}
+        }
+        case 'DELETE_BASKET_STUFF':{
+            let newBeers = state.beers
+            let deleteObj = state.basket.filter(el => el[0] === action.payload)
+            let stateWithoutDeleteObj = state.basket.filter(el => el[0] !== action.payload)
+
+            newBeers[action.payload - 1].valueOfStuff += +deleteObj[0][1].valueOfStuff
+
+            return {...state, basket: [...stateWithoutDeleteObj], costBasket: state.costBasket - (+deleteObj[0][1].totalPrice), sizeBasket: state.sizeBasket - +deleteObj[0][1].valueOfStuff,beers: [...newBeers]}
+        }
+
         default:
             return {...state}
     }

@@ -1,5 +1,4 @@
 import React, {useContext, useEffect} from 'react';
-// import {Beer} from "./Beer";
 import s from './ListBeers.module.css'
 import open from '../../Img/open.png'
 import coldBeer from '../../Img/coldBeer.png'

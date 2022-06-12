@@ -10,21 +10,24 @@ const fValueOfStuff = (obj) => {
 
 
 const initState = {
-    userLogged: true,
+    userLogged: false,
     beers: [],
     basket:[],
     errorCount: false,
     addToBasket: 1,
     heightPicture: 0,
+    userLogin: '',
+    userPassword: '',
     currentBeer: {},
     popup: false,
+    errorLogged: false,
     sizeBasket: 0,
     costBasket: 0,
-    value: 0
+    fetchingBeersError: false,
 }
 
 
-export const countReducer = (state = initState, action) => {
+export const beerReducer = (state = initState, action) => {
     switch (action.type) {
         case 'FETCH_BEERS':
             let beers = action.payload.beers
@@ -77,6 +80,19 @@ export const countReducer = (state = initState, action) => {
             newBeers[action.payload.id].valueOfStuff -= action.payload.value
             return {...state, beers: [...newBeers]}
         }
+        case 'SET_ERROR_LOGGED':{
+            return {...state, errorLogged: action.payload}
+        }
+        case 'SET_USER_LOGIN':{
+            return {...state, userLogin: action.payload}
+        }
+        case 'SET_USER_PASSWORD':{
+            return {...state, userPassword: action.payload}
+        }
+        case 'SET_FETCHING_BEERS_ERROR':{
+            return {...state, fetchingBeersError: action.payload}
+        }
+
         case 'DELETE_BASKET_STUFF':{
             let newBeers = state.beers
             let deleteObj = state.basket.filter(el => el[0] === action.payload)
@@ -87,6 +103,13 @@ export const countReducer = (state = initState, action) => {
             return {...state, basket: [...stateWithoutDeleteObj], costBasket: state.costBasket - (+deleteObj[0][1].totalPrice), sizeBasket: state.sizeBasket - +deleteObj[0][1].valueOfStuff,beers: [...newBeers]}
         }
 
+        default:
+            return {...state}
+    }
+}
+
+export const errorReducer = (state,action) => {
+    switch(action.type){
         default:
             return {...state}
     }

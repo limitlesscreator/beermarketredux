@@ -90,7 +90,7 @@ export const Beerdetails = () => {
                     {beers[tempId - 1]?.description}
                 </div>
 
-                {valueOfStuffShort === 0 ? '' : <div className={s.valueStuff}>Наличие: <span
+                {valueOfStuffShort === 0 || !userLogged ? '' : <div className={s.valueStuff}>Наличие: <span
                     className={s.countValueStuff}>{valueOfStuffShort}</span></div>}
 
                 {userLogged ?
@@ -103,7 +103,7 @@ export const Beerdetails = () => {
                                    onChange={onChangeHandler}/>
                         </div> :
                         <div className={s.emptyStuff}>Нету в наличии</div>}
-                    </div> : <div>Чтобы добавить товар в корзину залогинтесь</div>}
+                    </div> : <div className={s.addStuff}>Чтобы добавить товар в корзину залогинтесь</div>}
             </div>
         </div>
     );

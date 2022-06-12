@@ -1,5 +1,5 @@
 import './App.css';
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import React from "react";
 import {Nav} from "./Components/Nav/Nav";
 import {Route, Routes} from "react-router-dom";
@@ -9,28 +9,32 @@ import {Aboutshop} from "./Pages/AboutShop/Aboutshop";
 import {Notfoundpage} from "./Pages/NotFountPages/Notfoundpage";
 import {Basket} from "./Components/Basket/Basket";
 import {Popup} from "./Components/Popup/Popup";
+import {Modalerror} from "./Components/ModalError/Modalerror";
+import {ABOUT_PAGE, BASKET_PAGE, BEER_DETAILS_PAGE, MAIN_PAGE} from "./constants";
+
 
 function App() {
-    const dispatch = useDispatch()
-    const popup = useSelector(state => state.beers.popup)
+    const {popup, fetchingBeersError} = useSelector(state => state.beers)
 
     return (
         <>
             <div className={'main'}>
-                {/*{popup ? <Popup /> : ''}*/}
+                {popup ? <Popup/> : ''}
                 <Nav/>
                 <Routes>
-                    <Route path={'/beershop'} element={<ListBeers/>}/>
+                    <Route path={MAIN_PAGE()} element={<ListBeers/>}/>
 
-                    <Route path={'/beershop/beerDetails/:beer'} element={<Beerdetails/>}/>
+                    <Route path={BEER_DETAILS_PAGE()} element={<Beerdetails/>}/>
 
-                    <Route path={'/about'} element={<Aboutshop/>}/>
+                    <Route path={ABOUT_PAGE()} element={<Aboutshop/>}/>
 
                     <Route path={'*'} element={<Notfoundpage/>}/>
 
-                    <Route path={'/basket'} element={<Basket/>}/>
-
+                    <Route path={BASKET_PAGE()} element={<Basket/>}/>
                 </Routes>
+
+                {fetchingBeersError ? <Modalerror text={`Данные не пришли. Обновите страницу `}/> : ''}
+
             </div>
         </>
     );

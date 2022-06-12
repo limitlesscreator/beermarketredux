@@ -243,6 +243,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .emptyStuff{
+    font-size: 30px;
     color: red;
     text-transform: uppercase;
     text-shadow: 1px 1px 1px yellow;
@@ -250,3 +251,10 @@ input[type=number]::-webkit-inner-spin-button {
     margin-top: 30px;
 }
 
+.addStuff{
+    color: #ff0000;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #4400ff;
+    font-weight: bold;
+    margin-top: 30px;
+}

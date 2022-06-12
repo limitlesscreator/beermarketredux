@@ -9,18 +9,15 @@ import {ListBeers} from "../ListBeers/ListBeers";
 import {Basket} from "../Basket/Basket";
 
 export const Nav = () => {
-    // const {setUserLogged,userLogged,setPopup,costBasket,sizeBasket} = useContext(Context)
     const dispatch = useDispatch()
-    const userLogged = useSelector(state => state.beers.userLogged)
-    const sizeBasket = useSelector(state => state.beers.sizeBasket)
-    const costBasket = useSelector(state => state.beers.costBasket)
+    const {userLogged,sizeBasket,costBasket} = useSelector(state => state.beers)
 
     const specialClass = s.basket + ' ' + s.hoverElement
     return (
         <div className={s.nav}>
             <div className={s.helperMenu}></div>
             <div className={s.pairFixedSize}>
-                <Link className={s.fixedSize} to={'/beershop'}>Главная</Link>
+                <Link className={s.fixedSize} to={'/beermarketredux'}>Главная</Link>
                 <Link className={s.fixedSize} to={'/about'}>О магазине</Link>
             </div>
             <div className={s.positionLogo}>

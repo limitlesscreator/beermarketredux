@@ -1,7 +1,10 @@
 import {combineReducers} from 'redux'
-import {beerReducer} from "./reducer";
+import {authorizationReducer, basketReducer, beerReducer, errorReducer} from "./reducer";
 
 
 export const rootReducer = combineReducers({
-    beers: beerReducer
+    beers: beerReducer,
+    error: errorReducer,
+    authorization: authorizationReducer,
+    basket: basketReducer
 })

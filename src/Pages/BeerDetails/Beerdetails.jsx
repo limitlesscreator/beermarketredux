@@ -7,7 +7,10 @@ import {fetchBeers} from "../../actions/beersActions";
 
 export const Beerdetails = () => {
     const dispatch = useDispatch()
-    const {userLogged, errorCount, beers, addToBasket, heightPicture} = useSelector(state => state.beers)
+    const {beers, heightPicture} = useSelector(state => state.beers)
+    const {userLogged} = useSelector(state => state.authorization)
+    const {addToBasket} = useSelector(state => state.basket)
+    const {errorCount} = useSelector(state => state.error)
     const isEmptyBeers = Object.keys(beers).length > 0
     const location = useLocation()
     const tempId = location.pathname.split('-').reverse()[0]

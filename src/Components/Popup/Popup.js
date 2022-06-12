@@ -5,7 +5,9 @@ import {useDispatch, useSelector} from "react-redux";
 
 export const Popup = () => {
     const dispatch = useDispatch()
-    const {beers,errorLogged,userLogin,userPassword} = useSelector(state => state.beers)
+    const {beers} = useSelector(state => state.beers)
+    const {userPassword, userLogin} = useSelector(state => state.authorization)
+    const {errorLogged } = useSelector(state => state.error)
 
 
 

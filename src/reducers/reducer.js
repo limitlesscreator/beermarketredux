@@ -9,25 +9,33 @@ const fValueOfStuff = (obj) => {
 }
 
 
-const initState = {
-    userLogged: false,
+const initStateBeer = {
     beers: [],
-    basket:[],
-    errorCount: false,
-    addToBasket: 1,
     heightPicture: 0,
-    userLogin: '',
-    userPassword: '',
     currentBeer: {},
     popup: false,
+}
+
+const errorInitState = {
+    errorCount: false,
     errorLogged: false,
-    sizeBasket: 0,
-    costBasket: 0,
     fetchingBeersError: false,
 }
 
+const authorizationInitState = {
+    userLogged: false,
+    userLogin: '',
+    userPassword: '',
+}
 
-export const beerReducer = (state = initState, action) => {
+const basketInitState = {
+    basket:[],
+    addToBasket: 1,
+    sizeBasket: 0,
+    costBasket: 0,
+}
+
+export const beerReducer = (state = initStateBeer, action) => {
     switch (action.type) {
         case 'FETCH_BEERS':
             let beers = action.payload.beers
@@ -36,22 +44,72 @@ export const beerReducer = (state = initState, action) => {
                 el.valueOfStuff = fValueOfStuff(el) // Добавляю value наличие конкретному пиву
             })
             beers[0].valueOfStuff = 0 // просто сделал, что первое пиво не в наличии, второе крассивее открывается при клике))
-
             return {...state, beers: beers}
+
         case 'ADD_VALUE_STUFF':
             return {...state, valueOfStuff: action.payload}
-        case 'SET_USER_LOGGED':
-            return {...state, userLogged: action.payload}
+
         case 'SET_POPUP':
             return {...state, popup: action.payload}
+
+        case 'SET_HEIGHT_PICTURE':{
+            return {...state, heightPicture: action.payload}
+        }
+
+        case 'CHANGE_VALUE_STUFF':{
+            let newBeers = state.beers
+            newBeers[action.payload.id].valueOfStuff -= action.payload.value
+            return {...state, beers: [...newBeers]}
+        }
+
+        default:
+            return {...state}
+    }
+}
+
+export const errorReducer = (state = errorInitState,action) => {
+    switch(action.type){
+        case 'SET_ERROR_LOGGED':{
+            return {...state, errorLogged: action.payload}
+        }
         case 'SET_ERROR_COUNT':{
             return {...state, errorCount: action.payload}
         }
+        case 'SET_FETCHING_BEERS_ERROR':{
+            return {...state, fetchingBeersError: action.payload}
+        }
+
+        default:
+            return {...state}
+    }
+}
+
+export const authorizationReducer  = (state = authorizationInitState,action) => {
+    switch(action.type){
+        case 'SET_USER_PASSWORD':{
+            return {...state, userPassword: action.payload}
+        }
+        case 'SET_USER_LOGIN':{
+            return {...state, userLogin: action.payload}
+        }
+        case 'SET_USER_LOGGED':
+            return {...state, userLogged: action.payload}
+
+        default:
+            return {...state}
+    }
+}
+
+export const basketReducer  = (state = basketInitState,action) => {
+    switch(action.type){
         case 'SET_ADD_TO_BASKET':{
             return {...state, addToBasket: Number(action.payload)}
         }
-        case 'SET_HEIGHT_PICTURE':{
-            return {...state, heightPicture: action.payload}
+        case 'SET_COST_BASKET':{
+            return {...state, costBasket: state.costBasket + +action.payload}
+        }
+        case 'SET_SIZE_BASKET':{
+            return {...state, sizeBasket: state.sizeBasket + action.payload}
         }
         case 'ADD_TO_BASKET':{
             let currentObj = action.payload
@@ -69,30 +127,6 @@ export const beerReducer = (state = initState, action) => {
 
             return {...state, basket: [...state.basket, [action.payload.id, action.payload]]}
         }
-        case 'SET_SIZE_BASKET':{
-            return {...state, sizeBasket: state.sizeBasket + action.payload}
-        }
-        case 'SET_COST_BASKET':{
-            return {...state, costBasket: state.costBasket + +action.payload}
-        }
-        case 'CHANGE_VALUE_STUFF':{
-            let newBeers = state.beers
-            newBeers[action.payload.id].valueOfStuff -= action.payload.value
-            return {...state, beers: [...newBeers]}
-        }
-        case 'SET_ERROR_LOGGED':{
-            return {...state, errorLogged: action.payload}
-        }
-        case 'SET_USER_LOGIN':{
-            return {...state, userLogin: action.payload}
-        }
-        case 'SET_USER_PASSWORD':{
-            return {...state, userPassword: action.payload}
-        }
-        case 'SET_FETCHING_BEERS_ERROR':{
-            return {...state, fetchingBeersError: action.payload}
-        }
-
         case 'DELETE_BASKET_STUFF':{
             let newBeers = state.beers
             let deleteObj = state.basket.filter(el => el[0] === action.payload)
@@ -102,14 +136,6 @@ export const beerReducer = (state = initState, action) => {
 
             return {...state, basket: [...stateWithoutDeleteObj], costBasket: state.costBasket - (+deleteObj[0][1].totalPrice), sizeBasket: state.sizeBasket - +deleteObj[0][1].valueOfStuff,beers: [...newBeers]}
         }
-
-        default:
-            return {...state}
-    }
-}
-
-export const errorReducer = (state,action) => {
-    switch(action.type){
         default:
             return {...state}
     }

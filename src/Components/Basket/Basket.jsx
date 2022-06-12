@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './Basket.module.css'
 import {useDispatch, useSelector} from "react-redux";
 
 export const Basket = () => {
 
-    const {basket, costBasket, beers, addToBasket} = useSelector(state => state.beers)
+    const {beers} = useSelector(state => state.beers)
+    const {addToBasket,basket,costBasket} = useSelector(state => state.basket)
+
     const dispatch = useDispatch()
 
     const deleteHandler = (id) => {

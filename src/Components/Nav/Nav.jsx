@@ -1,16 +1,15 @@
 import React, {useContext} from 'react';
 import s from './Nav.module.css'
-import {Link, Route, Routes} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {ReactComponent as BasketIcon} from '../../icons/basket.svg'
 import logo from '../../Img/logoBeer.png'
-// import {Context} from "../context";
 import {useDispatch, useSelector} from "react-redux";
-import {ListBeers} from "../ListBeers/ListBeers";
-import {Basket} from "../Basket/Basket";
 
 export const Nav = () => {
     const dispatch = useDispatch()
-    const {userLogged,sizeBasket,costBasket} = useSelector(state => state.beers)
+    const {userLogged} = useSelector(state => state.authorization)
+    const {costBasket,sizeBasket} = useSelector(state => state.basket)
+
 
     const specialClass = s.basket + ' ' + s.hoverElement
     return (

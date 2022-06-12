@@ -14,7 +14,8 @@ import {ABOUT_PAGE, BASKET_PAGE, BEER_DETAILS_PAGE, MAIN_PAGE} from "./constants
 
 
 function App() {
-    const {popup, fetchingBeersError} = useSelector(state => state.beers)
+    const {popup} = useSelector(state => state.beers)
+    const {fetchingBeersError} = useSelector(state => state.error)
 
     return (
         <>

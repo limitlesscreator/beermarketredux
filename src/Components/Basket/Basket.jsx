@@ -10,7 +10,14 @@ export const Basket = () => {
     const dispatch = useDispatch()
 
     const deleteHandler = (id) => {
+        console.log(id)
+        console.log(basket)
+        const ourBeerInBasket = basket.find(el => el[1].id === id)
+        const prevValueOfStuff = ourBeerInBasket[1].valueOfStuff
+
+
         dispatch({type: 'DELETE_BASKET_STUFF', payload: id})
+        dispatch({type: 'CHANGE_VALUE_STUFF', payload: {id: id - 1, value: -(+prevValueOfStuff)}})
     }
 
     const minusHandlerStuff = (id) => {
@@ -61,11 +68,11 @@ export const Basket = () => {
             <table className={s.purpleHorizon}>
                 <thead>
                 <tr>
-                    <th>id</th>
-                    <th>Название</th>
-                    <th>Цена</th>
-                    <th>Кол-во</th>
-                    <th>сумма</th>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>COST</th>
+                    <th>VALUE</th>
+                    <th>SUM</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -74,16 +81,16 @@ export const Basket = () => {
                     return (
                         <tr key={el[1].id}>
                             <td>{el[1].id}</td>
-                            <td>{el[1].name}</td>
+                            <td className={s.tdName}>{el[1].name}</td>
                             <td>{el[1].price}</td>
-                            <td>
-                                <button onClick={() => minusHandlerStuff(el[1].id)}>-</button>
-                                {el[1].valueOfStuff}
-                                <button onClick={() => plusHandlerStuff(el[1].id)}>+</button>
+                            <td className={s.valueStuffBlock}>
+                                <button className={s.button} onClick={() => minusHandlerStuff(el[1].id)}>-</button>
+                                <span className={s.valueStuff}>{el[1].valueOfStuff}</span>
+                                <button className={s.button} onClick={() => plusHandlerStuff(el[1].id)}>+</button>
                             </td>
                             <td>{el[1].totalPrice}</td>
                             <td>
-                                <button onClick={() => deleteHandler(el[1].id)}>delete</button>
+                                <button className={s.buttonDelete} onClick={() => deleteHandler(el[1].id)}>delete</button>
                             </td>
                         </tr>
                     )

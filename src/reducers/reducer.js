@@ -58,6 +58,7 @@ export const beerReducer = (state = initStateBeer, action) => {
 
         case 'CHANGE_VALUE_STUFF':{
             let newBeers = state.beers
+            console.log('hereBoom')
             newBeers[action.payload.id].valueOfStuff -= action.payload.value
             return {...state, beers: [...newBeers]}
         }
@@ -128,13 +129,22 @@ export const basketReducer  = (state = basketInitState,action) => {
             return {...state, basket: [...state.basket, [action.payload.id, action.payload]]}
         }
         case 'DELETE_BASKET_STUFF':{
-            let newBeers = state.beers
+            let newBeers = state.basket
             let deleteObj = state.basket.filter(el => el[0] === action.payload)
+            // console.log(deleteObj)
             let stateWithoutDeleteObj = state.basket.filter(el => el[0] !== action.payload)
 
-            newBeers[action.payload - 1].valueOfStuff += +deleteObj[0][1].valueOfStuff
+            //
+            // console.log(newBeers)
+            // console.log(action.payload)
+            //
+            //
+            // console.log(deleteObj[0][1].valueOfStuff)
 
-            return {...state, basket: [...stateWithoutDeleteObj], costBasket: state.costBasket - (+deleteObj[0][1].totalPrice), sizeBasket: state.sizeBasket - +deleteObj[0][1].valueOfStuff,beers: [...newBeers]}
+
+            // newBeers[action.payload].valueOfStuff += +deleteObj[0][1].valueOfStuff
+
+            return {...state, basket: [...stateWithoutDeleteObj], costBasket: state.costBasket - (+deleteObj[0][1].totalPrice), sizeBasket: state.sizeBasket - +deleteObj[0][1].valueOfStuff}
         }
         default:
             return {...state}

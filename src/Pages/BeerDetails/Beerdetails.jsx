@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {useLocation} from "react-router";
 import s from "./Beerdetails.module.css";
 import price from '../../Img/priceForBeer.png'
@@ -18,10 +18,12 @@ export const Beerdetails = () => {
 
 
     let imgRef = useRef()
-
-    setTimeout(() => {
+    //
+    useEffect(() => {
         dispatch({type: 'SET_HEIGHT_PICTURE', payload: imgRef.current?.height})
-    }, 400)
+    },[])
+
+
 
     const onChangeHandler = (e) => {
         let temp = e.target.value

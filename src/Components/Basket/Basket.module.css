@@ -16,24 +16,56 @@ tr td{
 
 table.purpleHorizon {
     margin: 0 auto;
-    border: 2px solid #39ff14;
+    border: 2px solid rgba(57, 255, 20, 0.56);
     background-color: #555555;
-    width: 550px;
+    width: 800px;
     text-align: center;
     border-collapse: collapse;
 
 }
-table.purpleHorizon td, table.purpleHorizon th {
+
+.button{
+    border: none;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+.buttonDelete{
+    border: none;
+    color: #120952;
+    background: white;
+    height: 20px;
+    text-transform: uppercase;
+}
+
+.valueStuffBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.valueStuff{
+    margin: 0 5px;
+}
+.totalPrice{
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+}
+table.purpleHorizon td, tabvalueStuffle.purpleHorizon th {
     /*border: 10px solid #cd0303;*/
     padding: 5px 2px;
     border-collapse: collapse;
         text-align: center;
 
 }
-table.purpleHorizon tbody td {
+
+.tdName{
+    width: 400px;
+}
+table.purpleHorizon tbody {
     border-collapse: collapse;
-    border: 2px solid #39ff14;
-    font-size: 12px;
+    border: 1px solid rgb(57, 255, 20);
+    font-size: 19px;
     font-weight: bold;
     color: #FFFFFF;
     text-align: center;
@@ -47,14 +79,14 @@ table.purpleHorizon tr:nth-child(even) {
 table.purpleHorizon thead {
     text-align: center;
     background: #792396;
-    border: 2px solid #39ff14;
+    border: 2px solid rgba(57, 255, 20, 0.56);
 }
 table.purpleHorizon thead th {
     font-size: 19px;
     font-weight: bold;
     color: #FFFFFF;
     text-align: center;
-    border: 2px solid #39ff14;
+    border: 2px solid rgba(57, 255, 20, 0.56);
 }
 table.purpleHorizon thead th:first-child {
     border-left: none;

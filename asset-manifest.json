@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/beermarketredux/static/css/main.478a82d8.css",
-    "main.js": "/beermarketredux/static/js/main.a84c74d5.js",
+    "main.css": "/beermarketredux/static/css/main.be14a07f.css",
+    "main.js": "/beermarketredux/static/js/main.ac10dc18.js",
     "static/js/787.768e1d2c.chunk.js": "/beermarketredux/static/js/787.768e1d2c.chunk.js",
+    "static/media/astonDevs.png": "/beermarketredux/static/media/astonDevs.d66a969db8e5be58f2fa.png",
     "static/media/open.png": "/beermarketredux/static/media/open.cee80f816709d4319cf3.png",
     "static/media/priceForBeer.png": "/beermarketredux/static/media/priceForBeer.7b590a69df94f1f87664.png",
     "static/media/logoBeer.png": "/beermarketredux/static/media/logoBeer.a015b01ed65bc08080ca.png",
@@ -10,12 +11,12 @@
     "static/media/basket.svg": "/beermarketredux/static/media/basket.a9b7a7ea568377c6ce46b999af7b0eb0.svg",
     "index.html": "/beermarketredux/index.html",
     "static/media/close.svg": "/beermarketredux/static/media/close.664137c3b7f7ec33124fc3e7a2e3d117.svg",
-    "main.478a82d8.css.map": "/beermarketredux/static/css/main.478a82d8.css.map",
-    "main.a84c74d5.js.map": "/beermarketredux/static/js/main.a84c74d5.js.map",
+    "main.be14a07f.css.map": "/beermarketredux/static/css/main.be14a07f.css.map",
+    "main.ac10dc18.js.map": "/beermarketredux/static/js/main.ac10dc18.js.map",
     "787.768e1d2c.chunk.js.map": "/beermarketredux/static/js/787.768e1d2c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.478a82d8.css",
-    "static/js/main.a84c74d5.js"
+    "static/css/main.be14a07f.css",
+    "static/js/main.ac10dc18.js"
   ]
 }

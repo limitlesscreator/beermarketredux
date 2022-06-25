@@ -1,4 +1,5 @@
 .main{
+    position: relative;
     padding-top: 40px;
     height: 100vh;
     color: white;
@@ -18,4 +19,12 @@
 .description{
     margin-top: 10px;
     display: block;
+}
+
+.astonDevs{
+    position: absolute;
+    top: 0px;
+    right: -40px;
+    z-index: -1;
+
 }

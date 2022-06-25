@@ -23,7 +23,7 @@ const errorInitState = {
 }
 
 const authorizationInitState = {
-    userLogged: false,
+    userLogged: true,
     userLogin: '',
     userPassword: '',
 }
@@ -58,7 +58,6 @@ export const beerReducer = (state = initStateBeer, action) => {
 
         case 'CHANGE_VALUE_STUFF':{
             let newBeers = state.beers
-            console.log('hereBoom')
             newBeers[action.payload.id].valueOfStuff -= action.payload.value
             return {...state, beers: [...newBeers]}
         }

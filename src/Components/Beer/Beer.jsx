@@ -9,7 +9,8 @@ export const Beer = (props) => {
     const {userLogged} = useSelector(state => state.authorization)
 
 
-    const addToBasketOne = () => {
+    const addToBasketOne = (e) => {
+        e.preventDefault()
         dispatch({type: 'SET_COST_BASKET', payload: props.beer?.price})
         dispatch({type: 'SET_SIZE_BASKET', payload: 1})
         dispatch({type: 'ADD_TO_BASKET', payload: {id: props.id, name: props.beer?.name, price: props.beer.price, totalPrice: +props.beer.price, valueOfStuff: 1  }})
@@ -17,11 +18,12 @@ export const Beer = (props) => {
     }
 
     return (
+        <Link to={`beerDetails/beer-${props.id}`} onClick={() => {
+        }} className={s.cardBeer}>
         <div className={s.card}>
-            <Link to={`beerDetails/beer-${props.id}`} onClick={() => {
-            }} className={s.nameBeer}>{props.beer.name}</Link>
+        {props.beer.name}
 
-            <img src={props.beer.image_url} alt={props.beer.name}/>
+            <img className={s.beerImg} src={props.beer.image_url} alt={props.beer.name}/>
 
             <div>
                 <div className={s.priceBeer}>{props.beer?.price} ₽</div>
@@ -32,5 +34,6 @@ export const Beer = (props) => {
                     <div className={s.shouldLoggin}>Чтобы добавить товар в корзину залогинтесь</div>}
             </div>
         </div>
+        </Link>
     );
 };

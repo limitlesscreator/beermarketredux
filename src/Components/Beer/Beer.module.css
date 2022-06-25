@@ -40,14 +40,25 @@
     font-weight: bold;
     text-transform: uppercase;
     height: 30px;
+    cursor: pointer;
 }
 
-.nameBeer{
+@keyframes shake-beer{
+    0% { transform: translate(1px, 1px); }
+    33% { transform: translate(-1px, 1px); }
+    66% { transform: translate(-1px, -1px); }
+    100% { transform: translate(1px, -1px); }
+}
+
+
+
+.cardBeer{
     text-decoration: none;
     color: white;
     text-align: center;
 }
 
-.nameBeer:hover{
-    text-decoration: underline;
+.cardBeer:hover .beerImg {
+    display: block;
+    animation: shake-beer .1s infinite alternate;
 }

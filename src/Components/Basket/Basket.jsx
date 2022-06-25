@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './Basket.module.css'
 import {useDispatch, useSelector} from "react-redux";
 
@@ -62,6 +62,12 @@ export const Basket = () => {
 
     }
 
+    useEffect(() => {
+        window.scrollTo({
+            top: 0
+        })
+    },[])
+
 
     return (
         <div className={s.main}>
@@ -89,7 +95,7 @@ export const Basket = () => {
                                 <button className={s.button} onClick={() => plusHandlerStuff(el[1].id)}>+</button>
                             </td>
                             <td>{el[1].totalPrice}</td>
-                            <td>
+                            <td className={s.positionDelete}>
                                 <button className={s.buttonDelete} onClick={() => deleteHandler(el[1].id)}>delete</button>
                             </td>
                         </tr>

@@ -3,7 +3,8 @@ import {useDispatch} from "react-redux";
 import {BASE_API_URL, ERROR_API_URL} from "../constants";
 
 export const fetchBeers = () => async (dispatch) => {
-    let error = Math.round(Math.random() * (3 - 1) + 1) === 3 // шансы 1 к 3, что нам придёт ошибка с сервера) запрос на не существующий Url
+    // let error = Math.round(Math.random() * (3 - 1) + 1) === 3 // шансы 1 к 3, что нам придёт ошибка с сервера) запрос на не существующий Url
+    let error = false // убрал, для портфолио:)
     let allBeers
 
     try {

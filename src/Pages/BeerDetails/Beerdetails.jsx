@@ -18,16 +18,17 @@ export const Beerdetails = () => {
 
 
     let imgRef = useRef()
-    //
     useEffect(() => {
         dispatch({type: 'SET_HEIGHT_PICTURE', payload: imgRef.current?.height})
+        window.scrollTo({
+            top: 0
+        })
     },[])
 
 
 
     const onChangeHandler = (e) => {
         let temp = e.target.value
-        console.log(e.target.value)
         if (temp == '-') {
             return
         }

@@ -5,7 +5,7 @@ import astonDevs from '../../Img/astonDevs.png'
 export const Aboutshop = () => {
     return (
         <div className={s.main}>
-            <img src={astonDevs} className={s.astonDevs} alt=""/>
+            {/*<img src={astonDevs} className={s.astonDevs} alt=""/>*/}
             {/*<div className={s.part}>*/}
             {/*    <span className={s.title}>Кто мы?</span>*/}
             {/*    <span className={s.description}>Мы – фирменный магазин-склад компании "theBestBeer", один из крупнейших магазинов пива в России.</span>*/}
